@@ -1,7 +1,7 @@
 node{
-   stage('SCM Checkout'){
-       git credentialsId: 'git-creds', url: 'https://github.com/javahometech/my-app'
-   }
+   stage('Clone repository') {
+        git branch: "master", url: "https://github.com/princejoseph4043/Java-project-jenkins-cicd.git"
+    }
    stage('Mvn Package'){
      def mvnHome = tool name: 'maven-3', type: 'maven'
      def mvnCMD = "${mvnHome}/bin/mvn"
