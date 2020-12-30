@@ -31,7 +31,7 @@ pipeline {
     
     stage ('Nexus upload') {
       steps {
-        nexusArtifactUploader artifacts: [[artifactId: 'MyWebApp', classifier: '', file: 'target/MyWebApp.war', type: 'war']], credentialsId: 'nexus-logins', groupId: 'com.mkyong', nexusUrl: '107.23.238.72:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'maven-snapshot', version: '1.0-SNAPSHOT'
+        nexusArtifactUploader artifacts: [[artifactId: 'MyWebApp', classifier: '', file: 'target/MyWebApp.war', type: 'war']], credentialsId: 'nexus-logins', groupId: 'com.mkyong', nexusUrl: '107.23.238.72:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'maven-snapshots', version: '1.0-SNAPSHOT'
       }
     }
       
