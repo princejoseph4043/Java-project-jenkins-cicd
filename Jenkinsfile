@@ -28,6 +28,12 @@ pipeline {
         }
       }
     }
+    
+    stage ('Nexus upload') {
+      steps {
+        nexusArtifactUploader artifacts: [[artifactId: 'MyWebApp', classifier: '', file: 'target/MyWebApp.war', type: 'war']], credentialsId: 'b66aed62-b0eb-4724-a857-0d3175d26792', groupId: 'com.mkyong', nexusUrl: '5.171.47.100:9000', nexusVersion: 'nexus3', protocol: 'http', repository: 'maven-snapshot', version: '1.0-SNAPSHOT'
+      }
+    }
       
   }
 }
